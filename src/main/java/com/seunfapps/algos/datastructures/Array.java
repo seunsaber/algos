@@ -41,6 +41,18 @@ public class Array {
         }
         return max;
     }
+
+    public Array intersect(Array array2){
+        Array result = new Array(array2.getCount());
+
+        for(int i = 0; i < count; i++){
+            if(array2.indexOf(items[i]) != -1)
+                result.insert(items[i]);
+        }
+
+        return result;
+    }
+
     public void print(){
         System.out.print("[");
         for(int i = 0; i < count; i++)

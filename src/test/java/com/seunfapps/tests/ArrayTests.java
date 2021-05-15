@@ -111,4 +111,30 @@ public class ArrayTests {
         Assertions.assertEquals(max,  60);
 
     }
+
+    @Test
+    public void shouldReturnCommonItemsInNewArray(){
+        Array array1 = new Array(10);
+        array1.insert(12);
+        array1.insert(26);
+        array1.insert(34);
+        array1.insert(77);
+        array1.insert(6);
+        array1.insert(42);
+        array1.insert(51);
+        array1.insert(53);
+
+        Array array2 = new Array(8);
+        array2.insert(65);
+        array2.insert(26);
+        array2.insert(34);
+        array2.insert(12);
+        array2.insert(53);
+        array2.insert(67);
+
+        Array result = array1.intersect(array2);
+        result.print();
+
+        Assertions.assertEquals(result.getCount(), 4);
+    }
 }
