@@ -153,4 +153,22 @@ public class ArrayTests {
 
         Assertions.assertEquals(reversed.indexOf(4), 0);
     }
+
+    @Test
+    public void shouldInsertItemIntoArray(){
+        Array array = new Array(10);
+
+        array.insert(20);
+        array.insert(30);
+        array.insert(35);
+        array.insert(15);
+        array.print();
+        int beforeCount = array.getCount();
+        array.insertAt(3, 34);
+        array.print();
+        int afterCount = array.getCount();
+
+        Assertions.assertEquals(afterCount, beforeCount + 1);
+
+    }
 }

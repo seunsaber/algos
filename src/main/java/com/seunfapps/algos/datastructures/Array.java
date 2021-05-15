@@ -62,6 +62,17 @@ public class Array {
 
         return result;
     }
+
+    public void insertAt(int index, int value){
+        if(index < 0 || index >= count)
+            throw new IllegalArgumentException();
+
+        for (int i = count -1; i >=  index; i--){
+            items[i + 1] = items[i];
+        }
+        items[index] = value;
+        count++;
+    }
     public void print(){
         System.out.print("[");
         for(int i = 0; i < count; i++)
