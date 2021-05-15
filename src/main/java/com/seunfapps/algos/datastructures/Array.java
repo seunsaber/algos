@@ -32,6 +32,15 @@ public class Array {
         }
         return -1;
     }
+
+    public int max(){
+        int max = 0;
+        for(int i = 0; i < count; i++){
+            if(items[i] > max)
+                max = items[i];
+        }
+        return max;
+    }
     public void print(){
         System.out.print("[");
         for(int i = 0; i < count; i++)

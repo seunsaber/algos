@@ -92,4 +92,23 @@ public class ArrayTests {
         Assertions.assertEquals(index,  2);
 
     }
+
+    @Test
+    public void shouldReturnMax(){
+        Array array = new Array(10);
+        array.insert(20);
+        array.insert(30);
+        array.insert(35);
+        array.insert(15);
+        array.insert(60);
+        array.insert(58);
+        array.insert(12);
+        array.insert(6);
+        array.insert(49);
+
+        int max = array.max();
+
+        Assertions.assertEquals(max,  60);
+
+    }
 }
