@@ -53,6 +53,15 @@ public class Array {
         return result;
     }
 
+    public Array reverse(){
+        Array result = new Array(count);
+
+        for(int i = count -1; i >= 0; i--){
+            result.insert(items[i]);
+        }
+
+        return result;
+    }
     public void print(){
         System.out.print("[");
         for(int i = 0; i < count; i++)
