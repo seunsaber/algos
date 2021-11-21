@@ -1,8 +1,8 @@
 package com.seunfapps.algos.datastructures;
 
 public class Array {
-    private int [] items;
-    private int count; //keeps track of index that actually have values set.
+    public int [] items;
+    public int count; //keeps track of index that actually have values set.
     public int getCount() {
         return count;
     }

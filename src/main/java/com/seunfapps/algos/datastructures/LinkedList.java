@@ -49,6 +49,7 @@ public class LinkedList {
         }
         size++;
     }
+
     public void deleteFirst(){
         //[]
         //if(isEmpty) throw new NoSuchElementException
@@ -226,6 +227,12 @@ public class LinkedList {
                 return true;
         }
         return false;
+    }
+
+    public String peekFirst(){
+        if(first == null)
+            throw new IllegalStateException();
+        return first.value;
     }
     public class Node{
         private String value;

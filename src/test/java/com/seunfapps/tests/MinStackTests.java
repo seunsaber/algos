@@ -10,7 +10,7 @@ import org.junit.jupiter.api.TestInstance;
 public class MinStackTests {
 
     @Test
-    public void shouldReturnTopOfStack(){
+    public void shouldReturnMinimumInStack(){
         MinStack stack = new MinStack(100);
         stack.push(85);
         stack.push(79);
