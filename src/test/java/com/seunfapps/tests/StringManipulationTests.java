@@ -48,5 +48,16 @@ public class StringManipulationTests {
         Assertions.assertEquals("retaw", result);
     }
 
+    @Test
+    public void shouldReverseWord(){
+        String str =  "The world is a strange place";
+        String result = stringManipulation.reverseWords1(str);
+
+        Assertions.assertEquals("place strange a is world The", result);
+
+        result = stringManipulation.reverseWords2(str);
+        Assertions.assertEquals("place strange a is world The", result);
+    }
+
 
 }

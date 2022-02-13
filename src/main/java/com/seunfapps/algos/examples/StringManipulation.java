@@ -77,4 +77,27 @@ public class StringManipulation {
 
         return builder.toString();
     }
+
+    public String reverseWords1(String sentence){
+        if(sentence == null)
+            return "";
+
+        String [] words = sentence.trim().split(" ");
+        StringBuilder builder = new StringBuilder();
+
+        for(int i = words.length - 1; i >= 0; i--){
+            builder.append(words[i] +" ");
+        }
+
+        return builder.toString().trim();
+    }
+
+    public String reverseWords2(String sentence){
+        if(sentence == null)
+            return "";
+
+        String [] words = sentence.trim().split(" ");
+        Collections.reverse(Arrays.asList(words));
+        return String.join(" ", words);
+    }
 }
