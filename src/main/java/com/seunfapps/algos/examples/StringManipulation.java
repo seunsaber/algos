@@ -128,4 +128,51 @@ public class StringManipulation {
 
         return output.toString();
     }
+
+    public char getMostFrequentCharMap(String word){
+        if(word == null || word.isEmpty())
+            throw new IllegalArgumentException();
+
+        Map<Character, Integer> frequencies = new HashMap<>();
+
+        for(Character c : word.toCharArray()){
+            int count = frequencies.containsKey(c) ? frequencies.get(c) : 0;
+            frequencies.put(c, count + 1);
+        }
+
+        int max = 0;
+        Character result = ' ';
+        for(Map.Entry<Character, Integer> entry : frequencies.entrySet()){
+            if(entry.getValue() > max){
+                max = entry.getValue();
+                result = entry.getKey();
+            }
+        }
+
+        return result;
+    }
+
+    public char getMostFrequentCharASCIIArray(String word){
+        if(word == null || word.isEmpty())
+            throw new IllegalArgumentException();
+
+        //ascii has 256 possible
+        final int ASCII_SIZE = 256;
+        int [] frequecies = new int [ASCII_SIZE];
+
+        for(Character c : word.toCharArray()){
+            frequecies[c]++;
+        }
+
+        int max = 0;
+        char result = ' ';
+        for(int i = 0; i < frequecies.length; i++){
+            if(frequecies[i] > max){
+                max = frequecies[i];
+                result = (char) i;
+            }
+        }
+
+        return result;
+    }
 }

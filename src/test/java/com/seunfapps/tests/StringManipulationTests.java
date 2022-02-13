@@ -1,6 +1,5 @@
 package com.seunfapps.tests;
 
-import com.seunfapps.algos.examples.MinStack;
 import com.seunfapps.algos.examples.StringManipulation;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -83,6 +82,16 @@ public class StringManipulationTests {
         String str = "Where are you going to eat tomorrow";
         String result = stringManipulation.removeDuplicates(str);
         Assertions.assertEquals("Wher ayougintmw ", result);
+    }
+
+    @Test
+    public void shouldGetMaxFrequency(){
+        String str = "Green is keen";
+        char result = stringManipulation.getMostFrequentCharMap(str);
+        Assertions.assertEquals('e', result);
+
+        result = stringManipulation.getMostFrequentCharASCIIArray(str);
+        Assertions.assertEquals('e', result);
     }
 
 }
