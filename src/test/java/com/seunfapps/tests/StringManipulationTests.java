@@ -94,4 +94,29 @@ public class StringManipulationTests {
         Assertions.assertEquals('e', result);
     }
 
+    @Test
+    public void checkAnagram(){
+        String first = "ABCD";
+        String second = "DACB";
+
+        boolean areAnagram = stringManipulation.areAnagrams1(first, second);
+        Assertions.assertEquals(true, areAnagram);
+
+        areAnagram = stringManipulation.areAnagrams2(first, second);
+        Assertions.assertEquals(true, areAnagram);
+
+        areAnagram = stringManipulation.areAnagrams3(first, second);
+        Assertions.assertEquals(true, areAnagram);
+
+        second = "DACF";
+        areAnagram = stringManipulation.areAnagrams1(first, second);
+        Assertions.assertEquals(false, areAnagram);
+
+        areAnagram = stringManipulation.areAnagrams2(first, second);
+        Assertions.assertEquals(false, areAnagram);
+
+        areAnagram = stringManipulation.areAnagrams3(first, second);
+        Assertions.assertEquals(false, areAnagram);
+    }
+
 }

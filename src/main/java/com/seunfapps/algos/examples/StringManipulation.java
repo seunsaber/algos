@@ -175,4 +175,68 @@ public class StringManipulation {
 
         return result;
     }
+
+    public boolean areAnagrams1(String first, String second){
+        if(first == null || second == null || first.length() != second.length())
+            return false;
+
+        char [] array1 = first.toCharArray(); //O(n)
+        char [] array2 = second.toCharArray();
+
+        Arrays.sort(array1); //Arrays.sort uses QuickSort : O(n logn)
+        Arrays.sort(array2);//Arrays.sort uses QuickSort : O(n logn)
+
+        return Arrays.equals(array1, array2); //O(n)
+
+        //so overall time complaxity is O(n logn)
+    }
+
+    public boolean areAnagrams2(String first, String second){
+        //histogramming using array
+        final int ALPHABETS = 26;
+        int [] frequencies = new int [ALPHABETS];
+
+        char [] firstArray = first.toLowerCase().toCharArray();
+        for(int i = 0; i < firstArray.length; i++){
+            frequencies[firstArray[i] - 'a']++;
+        }
+
+        char [] secondArray = second.toLowerCase().toCharArray();
+        for(int i = 0; i < secondArray.length; i++){
+            if(frequencies[secondArray[i] - 'a'] == 0)
+                return false;
+            frequencies[secondArray[i] - 'a']--;
+        }
+
+        return true;
+
+        //O(n) this is faster than the other one.
+
+    }
+
+    public boolean areAnagrams3(String first, String second){
+        //histogramming using map.
+        Map<Character, Integer> map = new HashMap<>();
+
+        char [] firstArray = first.toLowerCase().toCharArray();
+        for(int i = 0; i < firstArray.length; i++){
+            int count = map.containsKey(firstArray[i]) ? map.get(firstArray[i]) : 0;
+            map.put(firstArray[i], count + 1 );
+        }
+
+        char [] secondArray = second.toLowerCase().toCharArray();
+        for(int i = 0; i < secondArray.length; i++){
+           if(!map.containsKey(secondArray[i]))
+               return false;
+           int count = map.get(secondArray[i]);
+           if(count == 0)
+               return false;
+           map.put(secondArray[i], count - 1);
+        }
+
+        return true;
+
+        //this is also O(n)
+
+    }
 }
