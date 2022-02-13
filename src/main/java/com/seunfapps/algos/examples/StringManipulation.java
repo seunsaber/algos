@@ -51,4 +51,15 @@ public class StringManipulation {
         }
         return hash;
     }
+
+    public int countVowels(String str){
+        Set<Character> vowels = new HashSet<Character>(Arrays.asList('a', 'e', 'i', 'o', 'u'));
+        int count = 0;
+        for(Character ch : str.toLowerCase().toCharArray()){
+            if(vowels.contains(ch)){
+                count++;
+            }
+        }
+        return count;
+    }
 }

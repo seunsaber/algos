@@ -3,11 +3,19 @@ package com.seunfapps.tests;
 import com.seunfapps.algos.examples.MinStack;
 import com.seunfapps.algos.examples.StringManipulation;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class StringManipulationTests {
+
+    private StringManipulation stringManipulation;
+
+    @BeforeEach
+    public void init(){
+        stringManipulation = new StringManipulation();
+    }
 
     @Test
     public void shouldReturnMinimumInStack(){
@@ -19,9 +27,18 @@ public class StringManipulationTests {
         //String [] sentences = new String [] {"listen it is silent"};
         //int [] expected = new int [] {4};
 
-        StringManipulation stringStuff = new StringManipulation();
-        int [] result = stringStuff.getNumberOfSentences(words, sentences);
+        int [] result = stringManipulation.getNumberOfSentences(words, sentences);
 
         Assertions.assertArrayEquals(expected, result);
     }
+
+    @Test
+    public void shouldCountVowels(){
+        String str =  "Hello world";
+        int result = stringManipulation.countVowels(str);
+
+        Assertions.assertEquals(3, result);
+    }
+
+
 }
