@@ -114,4 +114,18 @@ public class StringManipulation {
         return concat.contains(str2);
 
     }
+
+    public String removeDuplicates(String input){
+        Set<Character> inputSet = new HashSet<Character>();
+        StringBuilder output = new StringBuilder();
+
+        for(Character c : input.toCharArray()){
+            if(!inputSet.contains(c)){
+                inputSet.add(c);
+                output.append(c);
+            }
+        }
+
+        return output.toString();
+    }
 }

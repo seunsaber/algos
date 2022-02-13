@@ -78,4 +78,11 @@ public class StringManipulationTests {
         Assertions.assertEquals(false, isRotation);
     }
 
+    @Test
+    public void shouldRemoveDuplicates(){
+        String str = "Where are you going to eat tomorrow";
+        String result = stringManipulation.removeDuplicates(str);
+        Assertions.assertEquals("Wher ayougintmw ", result);
+    }
+
 }
