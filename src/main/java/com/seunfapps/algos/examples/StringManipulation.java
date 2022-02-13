@@ -53,6 +53,9 @@ public class StringManipulation {
     }
 
     public int countVowels(String str){
+        if(str == null)
+            return 0;
+
         Set<Character> vowels = new HashSet<Character>(Arrays.asList('a', 'e', 'i', 'o', 'u'));
         int count = 0;
         for(Character ch : str.toLowerCase().toCharArray()){
@@ -61,5 +64,17 @@ public class StringManipulation {
             }
         }
         return count;
+    }
+
+    public String reverse(String str){
+        if(str == null)
+            return "";
+
+        StringBuilder builder = new StringBuilder();
+        for(int i = str.length() - 1; i >= 0; i--){
+            builder.append(str.charAt(i));
+        }
+
+        return builder.toString();
     }
 }

@@ -40,5 +40,13 @@ public class StringManipulationTests {
         Assertions.assertEquals(3, result);
     }
 
+    @Test
+    public void shouldReverse(){
+        String str =  "water";
+        String result = stringManipulation.reverse(str);
+
+        Assertions.assertEquals("retaw", result);
+    }
+
 
 }
