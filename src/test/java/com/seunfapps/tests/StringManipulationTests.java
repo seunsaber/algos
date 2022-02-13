@@ -59,5 +59,23 @@ public class StringManipulationTests {
         Assertions.assertEquals("place strange a is world The", result);
     }
 
+    @Test
+    public void checkForRotation(){
+        String str1 = "ABCD";
+        String str2 = "DABC";
+
+        boolean isRotation = stringManipulation.rotate(str1, str2);
+        Assertions.assertEquals(true, isRotation);
+
+        str2 = "BCDA";
+
+        isRotation = stringManipulation.rotate(str1, str2);
+        Assertions.assertEquals(true, isRotation);
+
+        str2 = "BDCA";
+
+        isRotation = stringManipulation.rotate(str1, str2);
+        Assertions.assertEquals(false, isRotation);
+    }
 
 }

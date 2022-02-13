@@ -100,4 +100,18 @@ public class StringManipulation {
         Collections.reverse(Arrays.asList(words));
         return String.join(" ", words);
     }
+
+    public boolean rotate(String str1, String str2){
+        //Rotate chars, I.E move last character to front of string
+        //ABCD -> DABC -> CDAB -> BCDA -> ABCD
+        //to know if two strings are rotations of each other
+
+        if(str1 ==  null || str2 == null){
+            return false;
+        }
+
+        String concat = str1 + str1;
+        return concat.contains(str2);
+
+    }
 }
