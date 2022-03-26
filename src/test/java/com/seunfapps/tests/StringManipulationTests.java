@@ -119,4 +119,31 @@ public class StringManipulationTests {
         Assertions.assertEquals(false, areAnagram);
     }
 
+    @Test
+    public void checkPalindrome(){
+        boolean isPalindrome;
+        isPalindrome = stringManipulation.isPalindrome1("ABBA");
+        Assertions.assertEquals(true, isPalindrome);
+
+        isPalindrome = stringManipulation.isPalindrome2("ABBA");
+        Assertions.assertEquals(true, isPalindrome);
+
+        isPalindrome = stringManipulation.isPalindrome1("MADAM");
+        Assertions.assertEquals(true, isPalindrome);
+
+        isPalindrome = stringManipulation.isPalindrome2("MADAM");
+        Assertions.assertEquals(true, isPalindrome);
+
+        isPalindrome = stringManipulation.isPalindrome1("JAM");
+        Assertions.assertEquals(false, isPalindrome);
+
+        isPalindrome = stringManipulation.isPalindrome2("JAM");
+        Assertions.assertEquals(false, isPalindrome);
+    }
+
+    @Test
+    public void test(){
+        int resullt = stringManipulation.test("ONLABLABLOON");
+    }
+
 }

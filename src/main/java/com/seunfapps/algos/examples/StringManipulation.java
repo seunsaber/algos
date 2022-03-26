@@ -239,4 +239,83 @@ public class StringManipulation {
         //this is also O(n)
 
     }
+    public boolean isPalindrome1(String str){
+        //using stringbuilder
+        StringBuilder stringBuilder = new StringBuilder(str);
+        stringBuilder.reverse();
+        String reversed = stringBuilder.toString();
+        return str.equals(reversed);
+    }
+
+    public boolean isPalindrome2(String str){
+        int left = 0;
+        int right = str.length() - 1;
+
+        while(left < right){
+            if(str.charAt(left) != str.charAt(right))
+                return false;
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    public int test (String S){
+        Map<Character, Integer> charCount = new HashMap<>();
+        charCount.put('B', 0);
+        charCount.put('A', 0);
+        charCount.put('L', 0);
+        charCount.put('0', 0);
+        charCount.put('N', 0);
+
+
+        int passes = 0;
+
+        for(Character character : S.toCharArray()){
+            if(charCount.containsKey(character)){
+                charCount.put(character, charCount.get(character) + 1);
+            }
+        }
+
+        int charCounter;
+        while(true){
+            charCounter = charCount.get('B');
+            charCounter = charCounter - 1;
+            if(charCounter < 0)
+                break;
+            else
+                charCount.put('B', charCounter);
+
+            charCounter = charCount.get('A');
+            charCounter = charCounter - 1;
+            if(charCounter < 0)
+                break;
+            else
+                charCount.put('A', charCounter);
+
+            charCounter = charCount.get('L');
+            charCounter = charCounter - 2;
+            if(charCounter < 0)
+                break;
+            else
+                charCount.put('L', charCounter);
+
+            charCounter = charCount.get('O');
+            charCounter = charCounter - 2;
+            if(charCounter < 0)
+                break;
+            else
+                charCount.put('O', charCounter);
+
+            charCounter = charCount.get('N');
+            charCounter = charCounter - 1;
+            if(charCounter < 0)
+                break;
+            else
+                charCount.put('N', charCounter);
+
+            passes++;
+        }
+        return passes;
+    }
 }
