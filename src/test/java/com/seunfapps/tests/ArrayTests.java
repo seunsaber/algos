@@ -169,6 +169,5 @@ public class ArrayTests {
         int afterCount = array.getCount();
 
         Assertions.assertEquals(afterCount, beforeCount + 1);
-
     }
 }
